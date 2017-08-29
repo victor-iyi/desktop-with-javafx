@@ -13,10 +13,10 @@ import javafx.stage.Stage;
 /**
  * @author Victor I. Afolabi
  *         Artificial Intelligence & Software developer.
- *         javafolabi@gmail.com
+ *         <a href="mailto: javafolabi@gmail.com">javafolabi@gmail.com</a>
  *         Created on 29 Aug, 2017
  *         Time: 3:32 PM
- *         Copyright © 2017. Victor I. Afolabi. All rights reserved.
+ *         <p>Copyright © 2017. Victor I. Afolabi. All rights reserved.</p>
  */
 public class ConfirmBox {
 
@@ -30,7 +30,20 @@ public class ConfirmBox {
    * @credits Victor I. Afolabi
    */
   public static boolean show(String message) {
-    return show("Confirm", message, "Ok", "Cancel");
+    return show(message, "Ok", "Cancel");
+  }
+
+  /**
+   * Show a confirmation box
+   *
+   * @param message Confirmation message
+   * @param pos     Positive button title
+   * @param neg     Negative button title
+   * @return answer
+   * @credits Victor I. Afolabi
+   */
+  public static boolean show(String message, String pos, String neg) {
+    return show("Confirm", message, pos, neg);
   }
 
   /**
