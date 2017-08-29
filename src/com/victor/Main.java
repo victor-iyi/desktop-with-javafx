@@ -5,6 +5,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -43,15 +45,11 @@ public class Main extends Application {
     window = primaryStage;
     window.setTitle("JavaFX GUI");
 
-    CheckBox male = new CheckBox("Male");
-    CheckBox female = new CheckBox("Female");
-    male.setSelected(true);
-
-    HBox gender = new HBox(15);
-    gender.getChildren().addAll(male, female);
+    ChoiceBox<String> gender = new ChoiceBox<>();
+    gender.getItems().addAll("Male", "Female");
+    gender.setValue("Male");
 
     Button button = new Button("Click me");
-    button.setOnAction(event -> handleOptions(male, female));
 
     VBox layout = new VBox(10);
     layout.getChildren().addAll(gender, button);
