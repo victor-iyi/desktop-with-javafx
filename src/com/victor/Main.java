@@ -1,9 +1,12 @@
 package com.victor;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -39,20 +42,20 @@ public class Main extends Application {
   public void start(Stage primaryStage) throws Exception {
     window = primaryStage;
     window.setTitle("JavaFX GUI");
-    window.setOnCloseRequest(event -> {
-      event.consume();
-      close();
-    });
+
+    CheckBox male = new CheckBox("Male");
+    CheckBox female = new CheckBox("Female");
+    male.setSelected(true);
+
+    HBox gender = new HBox(15);
+    gender.getChildren().addAll(male, female);
 
     Button button = new Button("Click me");
-    button.setOnAction(e -> {
-      boolean answer = ConfirmBox.show("Are you sure you wanna send naked pics?");
-      if (answer)
-        AlertBox.show("Shit! She's gonna send her naked pics");
-    });
+    button.setOnAction(event -> handleOptions(male, female));
 
-    StackPane layout = new StackPane();
-    layout.getChildren().add(button);
+    VBox layout = new VBox(10);
+    layout.getChildren().addAll(gender, button);
+    layout.setPadding(new Insets(15, 15, 15, 15));
 
     Scene scene = new Scene(layout, 300, 250);
     window.setScene(scene);
@@ -62,10 +65,17 @@ public class Main extends Application {
   /**
    * Close the window properly
    */
-  public void close() {
+/*  public void close() {
     boolean answer = ConfirmBox.show("Are you sure you want to close this window?");
-    if ( answer )
+    if (answer)
       window.close();
+  } */
+  private void handleOptions(CheckBox...boxes) {
+    System.out.println();
+    for(CheckBox box : boxes) {
+      if ( box.isSelected() )
+        System.out.println("You are a " + box.getText());
+    }
   }
 
 }
