@@ -19,8 +19,7 @@ public class Main extends Application {
 
     Button button = new Button("Click me");
     button.setOnAction(e -> {
-      System.out.println("Hello, there");
-      System.out.println("Hello, lambda smooth!");
+      AlertBox.show("You know what to do, huh?");
     });
 
     StackPane layout = new StackPane();
