@@ -18,7 +18,12 @@ public class Main extends Application {
     primaryStage.setTitle("JavaFX GUI");
 
     Button button = new Button("Click me");
-    button.setOnAction(e -> AlertBox.show("You know what to do, huh?"));
+    button.setOnAction(e -> {
+      boolean answer = ConfirmBox.show("Are you sure you wanna send naked pics?");
+      if (answer) {
+        AlertBox.show("Damn! He wants to send naked pics");
+      }
+    });
 
     StackPane layout = new StackPane();
     layout.getChildren().add(button);
