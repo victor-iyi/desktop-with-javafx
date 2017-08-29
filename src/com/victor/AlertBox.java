@@ -44,7 +44,7 @@ public class AlertBox {
 
     Label msg = new Label(message);
     Button close = new Button("Ok");
-    close.setOnAction(e -> window.close() );
+    close.setOnAction(e -> window.close());
 
     VBox layout = new VBox(10);
     layout.getChildren().addAll(msg, close);
