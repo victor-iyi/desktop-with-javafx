@@ -21,7 +21,7 @@ public class Main extends Application {
     button.setOnAction(e -> {
       boolean answer = ConfirmBox.show("Are you sure you wanna send naked pics?");
       if (answer) {
-        AlertBox.show("Damn! He wants to send naked pics");
+        AlertBox.show("Shit! She's gonna send her naked pics");
       }
     });
 

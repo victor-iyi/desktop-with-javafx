@@ -1,5 +1,6 @@
 package com.victor;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -62,9 +63,11 @@ public class ConfirmBox {
 
     HBox btnLayout = new HBox(15);
     btnLayout.getChildren().addAll(posBtn, negBtn);
+    btnLayout.setAlignment(Pos.BASELINE_CENTER);
 
     VBox mainLayout = new VBox(10);
     mainLayout.getChildren().addAll(msg, btnLayout);
+    mainLayout.setPadding(new Insets(20, 20, 20, 20));
     mainLayout.setAlignment(Pos.CENTER);
 
     Scene scene = new Scene(mainLayout);
