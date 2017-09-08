@@ -42,6 +42,9 @@ public class Main extends Application {
     ChoiceBox<String> gender = new ChoiceBox<>();
     gender.getItems().addAll("Male", "Female");
     gender.setValue("Male");
+    gender.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+      System.out.println(observable.getValue());
+    });
 
     Button button = new Button("Click me");
 
